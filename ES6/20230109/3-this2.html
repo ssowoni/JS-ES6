@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id='버튼'>버튼</button>
+    <script>
+        
+        /*this의 뜻
+           3. 기계 안에서 쓰면 새로 생성되는 오브젝트를 뜻함
+              즉) instance라고 하는데 아래에서는 기계라는 함수를 뜻하는 것   */
+        var 어쩌구 = {}
+
+        function 기계(){
+            this.이름 = 'kim'
+        }
+
+        var 오브젝트 = new 기계();
+
+        /*this의 뜻
+            4. 이벤트 리스너  
+            지금의 이벤트가 동작하는 곳. 즉) 동작하고 있는 태그
+            id가 버튼인 태그 
+        */
+        document.getElementById('버튼').addEventListener('click',function(e){
+           // this; //e.currentTarget; 
+           
+            console.log(this);
+            console.log(e.currentTarget);
+
+            var 어레이 = [1,2,3];
+            //function(a){} 여기서 이 함수가 콜백함수이다. 
+            어레이.forEach(function(a){
+                console.log(this)
+            });
+
+
+            var 오브젝트4 = {
+            이름들 : ['김','이','박'],
+            함수5 : function(){
+                console.log(this);
+           /*      오브젝트4.이름들.forEach(function() {
+                    console.log(this)
+                }); */
+                //arrow function을 쓰면 this값을 재정의 하지 않는다.
+                //따라서 위에 this 값을 그대로 가져다 쓴다.
+                오브젝트4.이름들.forEach(()=> {
+                    console.log(this)
+                });
+            }
+        }
+
+        오브젝트4.함수5();
+
+
+
+
+
+
+        })
+
+        
+
+
+    </script>
+</body>
+</html>

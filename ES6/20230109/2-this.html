@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        /* 
+            this의 뜻
+            1. 딸랑 쓰거나, function 에서 사용하면 window
+        */
+        console.log(this);
+
+        function 함수1(){
+            console.log(this);
+        }
+
+        함수1();
+
+         /* 
+            this의 뜻
+            2. 오브젝트 안에서 this 함수를 쓰면 그 함수를 가지고 있는 오브젝트를 뜻함
+            여기서 this는 data : kim, 함수 : f 가 출력된다. 
+        */
+
+        var 오브젝트 = {
+            data : 'kim',
+            함수2 : function(){
+                console.log('안녕');
+                console.log(this);
+
+            }
+        }
+
+        console.log(오브젝트.data);
+        console.log(오브젝트.함수2());
+
+        /* 2번에서 this를 쓰면 그 함수를 가지고 있는 오브젝트를 뜻한다고 했다.
+            그렇게 되면 아래 data안에 함수에서 this를 출력하면 함수 : f가 출력된다.  */
+        var 오브젝트2 = {
+            data : {
+                함수3 : function(){
+                    console.log(this);
+
+                }
+            }
+        }
+
+        오브젝트2.data.함수3();
+
+
+        /* 2번에서 기존 문법인 function(){} 이 아닌 신 문법 () => {} 를 사용하면
+            위의 신 문법 이름은 arrow function 이다.
+            이는 this 값을 함수 밖에 있던 것 그대로 쓴다.
+            따라서 window가 출력된다.  */
+
+        var 오브젝트3 = {
+                    data : {
+                        함수4 : () => {
+                            console.log(this);
+
+                        }
+                    }
+                }
+
+        오브젝트3.data.함수4();
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="hello">안녕</p>
+    <button id="button">버튼</button>
+    <script>
+    
+   // document.getElementById('button').addEventListener('click',function(){
+    //function 대신에 () 뒤에 화살표도 된다. 
+    document.getElementById('button').addEventListener('click',()=>{    
+        document.getElementById('hello').innerHTML = '바보'
+    })
+
+    
+    var name3 = ['kim', 'park','lee'];//array 자료
+    console.log(name3[2]);
+    
+    var name2 = {name:'kim', age:20}; //object 자료
+    
+    // == 느슨한 비교 type 안 맞아도 맞다고 함
+    // === 엄격한 비교 type 까지 맞아야 한다.
+
+    
+    for(var i=0; i<3; i++){
+        console.log(name3[i]);
+    }
+
+    name3.forEach(function(number){
+        console.log(number);
+
+    });
+
+    name3.forEach(num=>console.log(num));
+
+
+
+
+
+    </script>
+    
+
+</body>
+</html>
+
+
+
