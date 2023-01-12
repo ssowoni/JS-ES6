@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="button">버튼이에요! </button>
+
+    <script>
+
+        //문1)
+        var 사람 = {
+            name :'손흥민',
+            sayHi : function(){
+                console.log('안녕 나는 ' + this.name);
+            }
+        }
+
+        사람.sayHi();
+
+        //문2)
+        var sum = 0;
+
+        var 자료 = {
+            data : [1,2,3,4,5],
+           /*  전부더하기 : function() {
+                this.data.forEach(element => {
+                    sum += element;
+                });
+                return console.log(sum);    
+            } */
+        }
+
+        자료.전부더하기=function(){
+            자료.data.forEach(element => {
+                    sum += element;
+                });
+                return console.log(sum); 
+        }
+
+        자료.전부더하기();
+
+        //문3)
+
+    /*     function 함수(){
+            setTimeout(()=>console.log(this.innerHTML), 1000);
+             
+        } */
+
+        document.getElementById('button').addEventListener('click', 
+        function(){
+            setTimeout(()=>console.log(this.innerHTML), 1000);
+        });
+
+
+      
+
+        
+    </script>
+    
+</body>
+</html>
