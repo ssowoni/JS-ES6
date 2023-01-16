@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            문제1 : 김밥123
+            문제2 :  123are
+
+            문제3 : 15
+            문제 4 : 15
+        
+        */
+
+        // 문 5 
+        
+
+        function 어레이(...파라미터들){
+            return 파라미터들;
+        }
+
+        var newArray = 어레이(1,2,3,4,5);
+        console.log(newArray);
+        
+        
+        //문 6 
+
+        let max = Math.max(5,6,7,8);
+        console.log(max);
+
+
+        function 최대값구하기(파라미터들){
+            console.log(...파라미터들);
+            return Math.max(...파라미터들);
+        }
+
+        //배열에 있는 값을 기본형으로 넣으려면 ? ,,?   
+        let numbers = [1,2,3,45,8,54,64,32,54,87,98,66,11];
+
+        console.log(최대값구하기(numbers));
+
+
+        //문 7
+
+        console.log( [ 'b', 'c', 'a' ].sort() );
+
+        
+        function 정렬(파라미터){
+            console.log(...파라미터);
+            console.log([...파라미터].sort());
+
+        }
+
+        정렬('bear');
+
+
+        // 문 8 
+
+        function 글자세기(파라미터){
+
+            var 결과 = {};
+            [...파라미터].forEach(function(a){
+                if(결과[a] > 0){결과[a]++}
+                else {
+                    결과[a] = 1
+                }
+            });
+            console.log(결과);
+        }
+        
+
+        글자세기('aacbbb');
+
+
+    </script>
+</body>
+</html>
