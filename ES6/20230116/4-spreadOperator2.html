@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* spread operator 사용법
+            3. 함수 파라미터 넣을 때  */
+
+        function 더하기(a,b,c){
+            console.log(a+b+c);
+        }
+
+        var 어레이 = [10,20,30]; //어레이를 더하기 함수에 파라미터로 넣고 싶다. 그럼 어떻게 하지? 
+        더하기(어레이[0],어레이[1],어레이[2]);
+
+        더하기(...어레이); //위에랑 같은 출력값 훨씬 편하다. 
+
+
+        //apply 함수는 언제 쓰지?
+
+        var person = {
+            인사 : function(){
+                console.log( this.name + ' 안녕');
+            }
+        }
+
+        person.인사();
+
+
+        //인사라는 함수를 person2에 적용시키고 싶다면?? 
+        var person2 = {
+            name : '손흥민'
+        }
+
+        //person2에 person.인사가 적용되어 실행된다. 
+        person.인사.apply(person2,[1],[2]); 
+
+        //apply와 call은 비슷한 기능을 한다. 
+        //다만 call은 파라미터로 집어넣을 때 array 형태로 집어넣지 못함.
+
+        person.인사.call(person2,1,2); 
+
+
+
+    </script>
+    
+</body>
+</html>

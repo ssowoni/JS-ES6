@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operator</title>
+</head>
+<body>
+    <script>
+        var 어레이 = ['hello', 'world'];
+        console.log(어레이);
+        console.log(...어레이);
+
+        var 문자 = 'hello';
+        console.log(...문자);
+
+
+        //spread operator는 값들의 대괄호를 없애줘 이렇게 생각하면 된다. 
+        var a = [1,2,3];
+        var b = [4,5];
+
+        var c = [...a, ...b];
+
+        console.log(c);
+
+
+        /* spread operator 사용법
+            1. array 합치기 */
+
+        var a = [1,2,3];
+        var b = a; //이렇게 값을 할당하면 값을 공유해버린다. 즉) a 바꾸면 b바뀜
+        var c = [...a]; //이렇게 해야 값을 공유하지 않는 단독 어레이 
+        
+        a[3] = 4;
+
+        console.log(a); //[1, 2, 3, 4]
+        //b는 값을 건들지 않았는데 a와 똑같은 값이 출력된다. (이상해~)
+        console.log(b); //[1, 2, 3, 4]
+        console.log(c); //[1, 2, 3]
+
+
+        /* spread operator 사용법
+             2. object 합치기 ( 대괄호, 중괄호 벗기기 둘다 가능하다. ) */
+
+        var o1 = {a:1, b:2} ;
+        var o2 = {...o1, c:3} ;
+        var o3 = {...o1};
+        
+        console.log(o2);
+        console.log(o3);
+
+        //...은 중괄호, 대괄호, 소괄호 안에서만 쓸 수 있다. 
+
+        
+
+
+    </script>
+</body>
+</html>
