@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extends, Super</title>
+</head>
+<body>
+    <script>
+
+        class 할아버지{
+            constructor(name){
+                this.성 = 'kim';
+                this.이름 = name;
+            }
+            //할아버지 프로토 타입에 추가된 함수
+            //할아버지를 상속하는 아버지에서도 사용 가능
+            sayHi(){
+                console.log(this.이름);
+                console.log('안녕'); 
+            }
+        }
+
+        var 할아버지1 = new 할아버지('장군');
+        할아버지1.sayHi();
+
+
+        class 아버지 extends 할아버지{
+            //이렇게 사용하면 에러가 난다. 
+             //why? extends 사용한 클래스는 this를 함부로 사용하지 못한다. 
+             //따라서 super()를 써줘야함. 
+            constructor(name){
+                super(name);
+                this.나이=50;
+            }
+        }
+
+    
+        var 아버지1 = new 아버지('장미');
+
+
+    </script>
+</body>
+</html>

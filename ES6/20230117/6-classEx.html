@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*  class 강아지정보{
+            constructor(종류, 색상){
+                this.type = 종류;
+                this.color = 색상;
+            }
+        }
+
+
+        var 강아지1 = new 강아지정보('말티즈', 'white');
+
+
+        class 고양이정보 extends 강아지정보{
+            constructor(종류,색상,나이){
+                super(종류,색상);
+                this.age = 나이;
+            }
+
+            한살먹기(){
+
+                this.age +=1;
+
+                console.log(this.age);
+            }
+
+
+        }
+
+        var 고양이1 = new 고양이정보('콧숏', 'white', 5);
+
+        고양이1.한살먹기();
+
+        console.log(고양이1); */
+
+
+/*         class 강아지정보{
+            constructor(종류, 색상,나이){
+                this.type = 종류;
+                this.color = 색상;
+                this.age = 나이;
+            }
+
+            한살먹기( ){
+
+                if(this instanceof 고양이정보 ){
+                this.age +=1;
+                }
+
+                console.log(this.age);
+            }
+        }
+
+
+        var 강아지1 = new 강아지정보('말티즈', 'white',6);
+
+
+        class 고양이정보 extends 강아지정보{
+            constructor(종류,색상,나이){
+                super(종류,색상,나이);
+                
+            }
+        }
+
+        var 고양이1 = new 고양이정보('콧숏', 'white', 6);
+
+        고양이1.한살먹기();
+
+        console.log(고양이1);
+
+        강아지1.한살먹기();
+
+        console.log(강아지1);
+ */
+        
+        class Unit{
+            constructor(){
+                this.공격력 = 5;
+                this.체력 = 100;
+            }
+
+            get battlePoint(){
+                return this.공격력+this.체력;
+            }
+
+            set heal(치유값){
+                this.체력 += 치유값;
+            }
+
+        }
+
+        var 캐릭터1 = new Unit();
+        console.log(캐릭터1.battlePoint);
+
+        캐릭터1.heal=50
+        console.log(캐릭터1.battlePoint);
+
+
+
+        var data ={
+            odd : [],
+            even : [],
+
+             홀짝계산기 : function(...파라미터들){
+                console.log(파라미터들);
+               // [파라미터들].forEach(a){
+                for(var a=0; a<파라미터들.length; a++){
+                    if(파라미터들[a] %2 ==0){
+                        this.even.push(파라미터들[a] )
+                    }else{
+                        this.odd.push(파라미터들[a])
+                    }
+                }
+            },
+
+            숫자정렬 : function(...파라미터들){
+                
+                this.홀짝계산기(...파라미터들);
+                
+            }
+
+        }
+
+    //    data.홀짝계산기(1,2,3,4,5,11,6);
+    //    console.log(data);
+
+        data.숫자정렬(1,2,3,4,5,11,6);
+        console.log(data);
+
+
+
+
+
+
+
+        
+
+
+    </script>
+</body>
+</html>

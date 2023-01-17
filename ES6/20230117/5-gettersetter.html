@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter, setter</title>
+</head>
+<body>
+    <script>
+        var 사람 = {
+            name : 'park',
+            age : 30,
+            nextAge(){
+                return this.age+1;
+            },
+            setAge(나이){
+                this.age=나이;
+            }
+        }
+
+        //age라는 자료를 꺼내고 싶으면?? 
+        사람.setAge(20);
+
+
+        //get, set 옵션 주기 
+        //get은 return이 있어야함. 
+        var 사람1 = {
+            name : 'park',
+            age : 30,
+            get nextAge(){
+                return this.age+1;
+            },
+            set setAge(나이){
+                this.age=parseInt(나이);
+            }
+        }
+
+        사람1.setAge='20';
+
+
+
+
+    </script>
+</body>
+</html>

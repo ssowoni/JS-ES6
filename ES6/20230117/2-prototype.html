@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <script>
+
+        //상속을 구현할 수 있는 또 하나의 문법이 prototype이다.
+        //이건 js에만 있는 것
+
+        function Student(이름, 나이){
+            this.name = 이름;
+            this.age = 나이;
+            this.sayHi= function(){
+                console.log('안녕 나는 ' + 이름 + '이야');
+            }
+        }
+
+        var 학생1 = new Student('kim', 20);
+        var 학생2 = new Student('park', 22);
+        var 학생3 = new Student('lee', 21);
+
+        console.log(학생1);
+
+        console.log(학생1.sayHi());
+
+
+        var arr = [1,2,3];
+
+        function remove3(){
+            arr.remove(3);
+        }
+
+        arr.remove3();
+
+        console.log(arr);
+
+
+
+    </script>
+    
+</body>
+</html>
