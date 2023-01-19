@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="test" src="https://codingapple1.github.io/kona.jpg"> 
+
+    <script>
+        
+        var 프로미스 = new Promise((성공,실패)=>{
+            var img = document.getElementById('test');
+
+            img.onload = function(){
+                성공();
+            }
+            img.error = () => 실패();
+/* 
+            if(status.onload){
+                성공();
+            }else{
+                실패();
+            } */
+
+        });
+
+
+        프로미스.then(()=>{
+            console.log("로드 성공");
+        }).catch(()=>{
+            console.log("로드 실패");            
+        })
+
+
+        /* 
+            var 이미지로딩 = new Promise(function(성공, 실패){
+            var img = document.querySelector('#test');
+            img.addEventListener('load', function(){
+                성공();
+            });
+            img.addEventListener('error', function(){
+                실패();
+            });
+            
+            });
+
+
+            이미지로딩.then(function(){
+            console.log('성공했어요')
+            }).catch(function(){
+            console.log('실패했어요')
+            })
+        */
+
+    </script>
+
+</body>
+</html>

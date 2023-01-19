@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동기, 비동기</title>
+</head>
+<body>
+    자바스크립트는 동기식(synchronous) 처리이다. 한 번에 한줄씩 차례로 실행됨
+    그러나 가끔 비동기식(Asynchronous)으로 처리되는데, 
+    setTimeout, addEventListener, 과 같은 함수에 의해서 실행됨
+
+    더 자세히 설명하면 
+    - 자바스크립트는 오래 걸리는 연산을 만나면 멈춤 ( =동기식 처리, synchronous)
+    - Web API와 연관된 특수한 함수들을 쓰면 작업이 오래걸릴 때 다른거부터 실행 가능 (=비동기식 처리, Asynchronous)
+
+    JavaScript를 순차적으로 실행하려면 = 콜백 함수를 사용한다. 
+
+    <script>
+        function 첫째함수(콜백함수){
+            console.log(1);
+            콜백함수();
+        }
+
+        function 둘째함수(){
+            console.log(2);
+        }
+
+        // 이렇게 부르면 100% 첫째가 먼저 나오지 못한다.
+   /*      첫째함수();
+        둘째함수(); */
+
+        //이렇게 불르면 100% 가능
+        첫째함수(둘째함수);
+
+        //콜백함수는 그져 디자인 패턴일뿐, 동기/비동기하고는 다른 개념이다. 
+
+        첫째함수(function(){
+            둘째함수(function(){
+                셋째함수(function(){
+                    //이런식으로 callback 함수 쓸 수 있음.
+                    //근데 보기 불편하잖아. 이때 쓰는게 promise
+                })
+            })
+        })
+
+
+    </script>
+
+</body>
+</html>

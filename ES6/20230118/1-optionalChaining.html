@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var user = {
+            name : 'kim',
+            // age : {value : 20}
+        };
+
+        //물음표 문법 언제 쓸 수 있을까?
+        //중첩된 object 자료에서 자료 뽑을 때 reference 에러 없이 안전하게 뽑을 수 있음. 
+        //if써서 만약 user의 age가 있으면 ~ 이런 조건문을 없앨 수 있다. 
+        console.log(user?.age);
+        // console.log(user.age.value);
+
+        console.log(undefined ?? '으잉');
+    </script>
+</body>
+</html>

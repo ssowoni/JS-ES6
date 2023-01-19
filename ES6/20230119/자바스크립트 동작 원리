@@ -1,0 +1,10 @@
+stack은 코드를 실행해주는 공간이다.한줄씩 실행함 (single thread)
+: 따라서 for문에 막 10초 걸리는 연산을 실행시켰다 그럼 그 사이에 ajax 요청, setTimeout 타이머, 버튼 클릭 등등 아무것도 실행 안됨.
+queue는 대기하는 코드들을 대기시키다가 stack에 하나씩 올려 보낸다. (stack이 텅 비었을 때 )
+
+예를들어 console~~  ; setTimeout ~~; console ; 이렇게 3줄의 코드가 있다면 
+console은 stack에서 실행되고 setTimeout은 queue에서 대기하다가 정해준 시간이 지나면
+다시 stack으로 전달돼 실행되는 것. 
+
+자바스크립트는 원래 동기적으로 실행된다. (한 줄씩 실행되는 것)
+그러나 가끔 비동기적인 처리도 가능하다. (setTimeout, 이벤트리스너, ajax  .. )
