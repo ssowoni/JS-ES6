@@ -13,7 +13,7 @@
 
 
 
-        var 프로미스 = new Promise((성공) =>{
+        /* var 프로미스 = new Promise((성공) =>{
 
             $.ajax({
             url : 'https://codingapple1.github.io/hello.txt',
@@ -26,11 +26,38 @@
 
         프로미스.then((결과)=>{
             console.log(결과);
+            var 프로미스2 = new Promise((성공, 실패)=>{
+                $.get('https://codingapple1.github.io/hello2.txt').done((결과2)=>{
+                    성공(결과2)
+                })
+            });
+
+            return 프로미스2;
+        }).then((결과2)=>{
+            console.log(결과2);
+        }) */
+/* 
+        프로미스.then((결과)=>{
+            console.log(결과);
+        }).then(()=>{
+            $.get('https://codingapple1.github.io/hello2.txt').done((결과2)=>{
+                console.log(결과2);
+
+            })
         })
 
+ */
 
+        $.ajax({
+            url : 'https://codingapple1.github.io/hello2.txt',
+            type : 'get'
+        }).done(function(결과){
+            console.log(결과);
+        }).fail((결과)=>{
+            console.log(결과);
+        })
      
-
+        
 
 
 
